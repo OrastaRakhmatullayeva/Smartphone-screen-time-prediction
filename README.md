@@ -1,19 +1,38 @@
 # Smartphone Screen Time Prediction (Linear Regression)
 
-A Linear Regression model that predicts a user's daily screen time (`daily_screen_time_hours`) using the Kaggle Playground Series (S6E8) dataset (~690K rows).
+A machine learning project that estimates daily smartphone 
+screen time using behavioral data and Linear Regression.
 
-## Project Steps
-- Filled missing values using median (numeric) and mode (categorical)
-- Detected and cleaned outliers using the IQR method
-- Explored correlations between features and the target
-- Compared different feature combinations to find the best model
-- Evaluated with train/test split and MAE, RMSE, R² metrics
+## Dataset
 
-## Result
-Using `social_media_hours`, `gaming_hours`, `app_opens_per_day`, `notifications_per_day`, and `weekend_screen_time` as features:
-- **R² = 0.58**
-- **MAE = 1.26 hours**
-- **RMSE = 1.61 hours**
+[Kaggle Playground Series S6E8](https://www.kaggle.com/competitions/playground-series-s6e8/data)
+
+## Methodology
+
+- Exploratory Data Analysis (EDA)
+- Missing value and outlier handling
+- Feature selection
+- Train-test split (80/20)
+- Linear Regression and baseline comparison
+
+## Results
+
+| Model | R² | MAE (hours) | RMSE (hours) |
+|---|---:|---:|---:|
+| Mean Baseline | 0.0000 | 2.3193 | 2.7159 |
+| Linear Regression | 0.6539 | 1.2531 | 1.5978 |
+
+Linear Regression reduced MAE by 46% compared to the baseline.
 
 ## Tech Stack
-Python, Pandas, NumPy, Matplotlib, Seaborn, Scikit-learn
+
+Python, Pandas, NumPy, Scikit-learn, Matplotlib, Seaborn
+
+## How to Run
+
+Open the notebook in Google Colab and run all cells.
+
+## Limitations
+
+The model estimates screen time from existing usage data,
+rather than forecasting future behavior.
